@@ -1,0 +1,14 @@
+如何在網站上寫程式和跑程式（HTML）
+1.創作一個新的檔案名稱後面要加.html比如bmiweek2.html才能將程式放入網站跑
+2.將檔案保存後，按右鍵在檔案中總管中顯示，看檔案種類是否為html document。
+3.點擊檔案將會把檔案開啟到網站app如google chrome，然後按f12將會把程式視窗打開
+4.當檔案創好後輸入html:5
+5.擁有兩種方式將我們要用到之前我們所做的程式如第一個星期的bmijs或者第二個星期的bmijs搬入html裡
+-第一種方法是輸入script後將之前的檔案的程式抄下
+-第二種方法是輸入script:source然後輸入該檔案的名字
+6.輸入label for= weight後寫上你要使用者明白的句子如Please input your weight和輸入input type=number id"weight"將會限制使用者只能輸入號碼而並非其它文字如yes,no等
+7.輸入相同的東西給 label for= height後後寫上你要使用者明白的句子如Please input your height和輸入input type=number id"height"將會限制使用者只能輸入號碼而並非其它文字如yes,no等
+8.輸入button onclick="calcbmi()"將會在網頁加上一個按鈕當使用者按按鈕時將會進行計算然後加上Calc bmi在後會將按鈕寫上calc bmi在後會將按鈕寫上calcbmi
+9.輸入 p id=bmi
+10.輸入script:src=bmi week 2.js 將會把bmi week 2.js內的程式搬入html裡後執行該程序
+11。將檔案儲存後，開啟檔案到chrome後，進行測試輸入數字和執行是否有該程式進行運算將bmi給算出。
