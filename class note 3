@@ -1,0 +1,30 @@
+Java Script套件管，加載和使用
+1.在終端機輸入npm init後，在將npm install readline-sync，readline sync 的用處在於使用者需要填寫或完成問題後，才會繼續執行該程式，否者無法執行接下來的程式
+2.node modules不要備份到github,刪除或擁有.gitignore把node module不會提交到github
+3.當nodemodule已移除，有需要使用到該套件時可以直接使用npm install,將會自動幫你判斷你之前以加載的套件並直接下載不需要輸入該套件名稱。
+4.如果加載到不需要的npm可以使用npm uninstall將該npm給移除
+5.當使用readline-sync套件時，需要輸入var readline=require("readline-sync")
+6.要對使用者發問與回答比如體重，需要輸入var weight=readline.question("please input your weight in kg")。
+7.如果要該使用者回答數字可以在var weight=readline.question("please in put your weight in kg")的readline.question的後面改成readline.questionInt會是數字的總數而readline.questionFloat會是數字與小數點。
+8.執行程式前，要到執行與偵錯使用nodejs後開啟launch.json,將programme後面的資料改成${file},和加上console:"integratedTerminal"才能執行該程式
+9.當使用者得到bmi的結果後，可以透過增加if else或者switch程式來從bmi所得到的值來判斷使用者他們目前的體重屬於正常，過重，過輕等。
+-比如if(bmi<18.5){
+    console.log("體重過輕")
+}else if(bmi<24){
+    console.log(“健康體位”)
+}else if(bmi<27){
+    console.log("體重微胖")
+}
+或
+switch(true){
+    case(bmi>=27):
+    category="obese";
+    break;
+    case(bmi>=24)：
+    category="overweight"
+    .
+    .
+    .
+    .
+}
+10.最後要在原本console.log加上(".you are" + category + ".")；
