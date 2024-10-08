@@ -1,0 +1,16 @@
+JAVASCRIPT寫猜數字遊戲
+1.首先要寫下var Ans = Math(Math.random()）將會隨機產生一個數字0<1之間
+2.如果不要小數點就寫下Math.floor,如要數字大一些要加上*10，如果要把零移除可以寫（math.random()*9)+1
+3.寫上var g=readline.qeustion(please input an integer 0-9)
+4.當你確定迴圈要跑幾次時才使用for(var i=0;i<10,i++)否者使用do while
+5.寫下while(G<0 || g>9) ||代表或而&&代表和
+6.當玩家繼續玩時，確保答案會不同的話需要重新寫過Ans = Math(Math.random()否者會重複同樣的答案
+JAVASCRIPT寫4D遊戲
+1.要產生4個隨機的數字要先寫下一個排列組合如 var Ans=[0,1,2,3,4,5,6,7,8,9]
+2.for(var i=0;i<4,i++)是將會從以上排列的組合前面的4個數目如果你要從中間比如3開始的話你可以寫for(var i=3;i<7,i++)
+3.var rand Math.floor(Math.random()*10)是用來弄亂數目並且要加上
+var temp = Ans[i]
+ Ans[i] = Ans[rand];
+ Ans[rand]=temp;
+4.為了確保是4個數字可以將var G=readline.questionInt("Please input 4 digit?")while（G<1000 || G>10000)來限制最多4個數字
+5.var gate=G.tostring(）換成字串變成陣列
