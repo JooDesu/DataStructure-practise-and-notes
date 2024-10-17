@@ -31,10 +31,23 @@ console.log(ary2d)
 //var newary2d=["A","B","C"]
 //ary2d.push(newary2d)
 //Dynamic
-var row=9,col=7
-var dynaAry2d=[];
+
+var row=9,col=7//9行，7排
+var dynaAry2d=[];//空的值
 for(var _row=0;_row<row;_row++){//將會加到有9行為止
-dynaAry2d.push([])};
-for(var _col=0;_col<col;_col++){//將會加到有7排數字為止
-dynaAry2d[_row].push(_col+_row*col);//將會將數字乘排數
+dynaAry2d.push([])};//把以上行的值塞入裡面
+//[]
+//[]
+//[]
+//[]
+//[]
+//[]
+//[]
+//[]
+//[]
+for(var _row=0;_row<row;_row++){
+for(var _col=0;_col<col;_col++){//將會有7個值在行內如[0,1,2,3,4,5,6]
+dynaAry2d[_row].push(_col+_row*col);//將for(var _col=0;_col<col;_col++)放入dynaAry2d[row]行的裡面並且每行的數字都會加上row*col的數值
 }
+}
+console.log(dynaAry2d)
