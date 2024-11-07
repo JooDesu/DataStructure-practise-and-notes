@@ -1,11 +1,11 @@
-const Live = 1;
-const Dead = 0;
+const Live = 1;//宣告存活的值
+const Dead = 0;//宣告死亡的值
 
 class Life{
    constructor(_row, _col){
         this.row = _row;
         this.col = _col;
-        this.grid=[];//new Array()
+        this.grid=[];//new Array()新的陣列，並且是2d陣列
         //2d array
         for(var _row=0;_row < this.row;_row++){
             this.grid.push([]);
@@ -82,9 +82,9 @@ class Life{
             for(var _col=0;_col<this.col;_col++){
                 //ar2d[_row][_col]=>0,1
                 if(this.grid[_row][_col]==Live){
-                    canvas.fillStyle="#ff0000"
+                    canvas.fillStyle="#ff0000"//輸入顏色
                 }else{
-                    canvas.fillStyle="#ffffff"
+                    canvas.fillStyle="#ffffff"//輸入顏色
                 }
                 //600/5=>120  coordinate x,y , width, heigth
                 canvas.fillRect(_col*this.size,_row*this.size,this.size,this.size);

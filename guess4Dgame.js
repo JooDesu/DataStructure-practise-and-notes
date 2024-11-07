@@ -2,7 +2,7 @@ var readline = require("readline-sync");
 
 var Ans=[0,1,2,3,4,5,6,7,8,9]; //寫下一個排列組合
 for(var i=0;i<4;i++){//是將會從以上排列的組合前面的4個數目進行弄亂排列
-  var rand = Math.floor(Math.random()*10);//用在隨機產生數字
+  var rand = Math.floor(Math.random()*10);//用在隨機產生數字,floor將會寫出整數不會有小數點。
   var temp= Ans[i];//打亂數字
   Ans[i] = Ans[rand];
   Ans[rand] = temp;
