@@ -3,14 +3,14 @@ const Dead = 0;//宣告死亡的值
 
 class Life{
    constructor(_row, _col){
-        this.row = _row;
-        this.col = _col;
+        this.row = _row;//宣告行
+        this.col = _col;//宣告排
         this.grid=[];//new Array()新的陣列，並且是2d陣列
         //2d array
         for(var _row=0;_row < this.row;_row++){
-            this.grid.push([]);
+            this.grid.push([]);//把上面的值（_row,_col)的值加入陣列裡
             for(var _col=0;_col < this.col;_col++){
-                this.grid[_row].push(Dead);
+                this.grid[_row].push(Dead);//將上面(const dead=0)的值加入陣列裡
             }
         }
         
@@ -19,28 +19,28 @@ class Life{
         if(random == true){
             for(var _row=0;_row < this.row;_row++){
                 for(var _col=0;_col < this.col;_col++){
-                    this.grid[_row][_col] = (Math.random()<0.1) ? Live : Dead;
+                    this.grid[_row][_col] = (Math.random()<0.1) ? Live : Dead;//隨機運算
                 }
             }
         }else{
-            this.grid[1][1] = Live;
+            this.grid[1][1] = Live;//當[是第二行的第二排]的值小過0.1
             this.grid[1][2] = this.grid[1][3] = this.grid[1][4] =Live; 
         }
     }
 
     update = function(){
-          var nextGrid = JSON.parse(JSON.stringify(this.grid));
+          var nextGrid = JSON.parse(JSON.stringify(this.grid));//將字串變成陣列
           //travse all elements, count its neighbor
           var neighbor;
           for (let _row = 0; _row < this.row; _row++) {
             for (let _col = 0; _col < this.row; _col++) {
-                neighbor = this.neighborCount(_row, _col);
+                neighbor = this.neighborCount(_row, _col);//判斷該細胞周圍的的值並判斷是否遵守以下的規矩
                 // update by 4 rules
-                if(this.getStatusAt(_row,_col)==Live && (neighbor<=1 || neighbor>=4)){
-                    nextGrid[_row][_col] = Dead;
+                if(this.getStatusAt(_row,_col)==Live && (neighbor<=1 || neighbor>=4)){//當細胞活著時和周圍被佔的格子少過或等於零或者大過四或等於4
+                    nextGrid[_row][_col] = Dead;//細胞死亡
                 }
-                if(this.getStatusAt(_row,_col)==Dead && neighbor==3){
-                    nextGrid[_row][_col] = Live;
+                if(this.getStatusAt(_row,_col)==Dead && neighbor==3){//當細胞是死事和周圍被佔的格子是3的話
+                    nextGrid[_row][_col] = Live;//細胞存活
                 }
 
             }
@@ -52,7 +52,7 @@ class Life{
     } 
 
 
-    neighborCount = function(row, col){
+    neighborCount = function(row, col){//判斷用途細胞的位置
         var count=0;
         count += this.getStatusAt(row-1, col-1);
         count += this.getStatusAt(row-1, col); 
@@ -67,7 +67,7 @@ class Life{
         count += this.getStatusAt(row+1, col+1);      
         return count;   
     }
-    getStatusAt = function(row, col){
+    getStatusAt = function(row, col){//判斷細胞周圍被佔的值，判斷該細胞死亡或存活
         if(row<0 || col<0 || row >= this.row || col >= this.col){
            return Dead;
         }else{
@@ -75,7 +75,7 @@ class Life{
         }
     }
 
-    draw = function(_canvas){
+    draw = function(_canvas){//畫在格子上面
         var canvas = document.getElementById(_canvas).getContext("2d");
         this.size=Math.min(canvas.canvas.height/this.row, canvas.canvas.width/this.col);
         for(var _row=0;_row<this.row;_row++){
@@ -116,7 +116,7 @@ function tonext(){
     myGame.draw("map")
 }
 
-function mouseClick(event){
+function mouseClick(event){//讓玩家可以用滑鼠點擊格子，產生細胞
    var _row = Math.floor(event.offsetY/myGame.size);
    var _col = Math.floor(event.offsetX/myGame.size);
 //    if(myGame.getStatusAt(_row,_col)==Live){
@@ -136,17 +136,17 @@ function mouseClick(event){
 }
 
 function random(){
-   myGame.initialize(true);
+   myGame.initialize(true);//隨機生成
    myGame.draw("map");
 }
 
 var myTime;
 function run(){
    var step = document.getElementById("step").value;
-   myTime = setInterval(tonext, Number(step));
+   myTime = setInterval(tonext, Number(step));//每隔一個時間，到下一步的畫面
 }
 function stop(){
-    clearInterval(myTime);
+    clearInterval(myTime);//停止所有運算
 }
 
 
@@ -154,6 +154,6 @@ var myGame = new Life(100,100);
 var myGame2 = new Life(100,100);
 
 myGame.initialize();
-myGame.draw("map")
+myGame.draw("map")//格子出現（以設定該格子的數量與大小在game of life.html
 
 var runnng = setTimeout(tonext, 1000);
