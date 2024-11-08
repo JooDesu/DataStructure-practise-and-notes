@@ -10,7 +10,7 @@ class Life{
         for(var _row=0;_row < this.row;_row++){
             this.grid.push([]);//把上面的值（_row,_col)的值加入陣列裡
             for(var _col=0;_col < this.col;_col++){
-                this.grid[_row].push(Dead);//將上面(const dead=0)的值加入陣列裡
+                this.grid[_row].push(Dead);//將上面(const dead=0)的值加入陣列[_row]裡
             }
         }
         
