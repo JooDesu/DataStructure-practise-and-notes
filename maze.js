@@ -25,7 +25,7 @@ var start= new Point(1,1);//{row:1,col:1}開頭
 var end = new Point(8,10);//[8,10]結尾
 var Stack=[];
 var step = start;
-var rollback=false;
+var rollback=false;//避免在路徑上無法經過重複地點
 
 function go(){
      Stack.push(step);
@@ -61,7 +61,7 @@ function go(){
             Stack.push(step);
             rollback=false;
         }else{
-            if(Stack.length>0){//返回
+            if(Stack.length>0){//返回換取路綫
               step = Stack.pop();
               rollback=true
         }else
