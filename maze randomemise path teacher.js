@@ -25,7 +25,7 @@ var start = new Point(1, 1);
 var end = new Point(8, 10);
 var Stack = [];
 var step = start;
-var rollBack=false;
+var rollBack=false;//用來判斷倒退
 
 var ary=[1,5,6,2,9];
 ary.sort((a,b)=>{return b-a})
@@ -86,9 +86,9 @@ function go() {
 }
 function drawPath(_stack) {
     _stack.forEach(item => {
-        var canvas = document.getElementById("map").getContext("2d");
-        var size = Math.min(canvas.canvas.height / MAZE.length, canvas.canvas.width / MAZE[0].length);
-        canvas.fillStyle = "#ff0000";
+        var canvas = document.getElementById("map").getContext("2d");//從設定的html地圖大小給畫出在html
+        var size = Math.min(canvas.canvas.height / MAZE.length, canvas.canvas.width / MAZE[0].length);//
+        canvas.fillStyle = "#ff0000";//上色紅色
         canvas.fillRect(item.col * size, item.row * size, size, size);
         //canvas.strokeRect(_col*size,_row*size,size,size);
     })
@@ -101,11 +101,11 @@ function drawBoard() {
     for (var _row = 0; _row < MAZE.length; _row++) {
         for (var _col = 0; _col < MAZE[0].length; _col++) {
             //ar2d[_row][_col]=>0,1
-            if (MAZE[_row][_col] == 1) {
+            if (MAZE[_row][_col] == 1) {//墻壁黑色
                 canvas.fillStyle = "#000000"
-            } else if (MAZE[_row][_col] == 0) {
+            } else if (MAZE[_row][_col] == 0) {//道路空白
                 canvas.fillStyle = "#ffffff"
-            } else if (MAZE[_row][_col] == 2) {
+            } else if (MAZE[_row][_col] == 2) {//走過的道路紅色
                 canvas.fillStyle = "#ffff00"
             }
             //600/5=>120  coordinate x,y , width, heigth
