@@ -32,7 +32,7 @@ ary.sort((a,b)=>{return b-a})
 ary.sort((a,b)=>{return Math.random()-0.5});
 
 var dir=[{x:-1,y:0}, {x:1,y:0},{x:0,y:-1},{x:0,y:1}];//宣告方向的值如上下左右
-dir.sort((a,b)=>{return x.y-x.y});//從x的大到小排列，如果放的a.x-b.x是x從小到大/y也是一樣。
+dir.sort((a,b)=>{return a.x-b.x});//從x的大到小排列，如果放的a.x-b.x是x從小到大/y也是一樣。
 dir.sort((a,b)=>{return Math.random()-0.5});//排列隨機并不會根據大小排列來行走方向
 
 function go() {
