@@ -38,7 +38,7 @@ dir.sort((a,b)=>{return Math.random()-0.5});//排列隨機并不會根據大小�
 function go() {
     Stack.push(step);
     while (!step.isEnd()) {
-        
+        drawBoard()
         MAZE[step.row][step.col] = 2; 
         if (MAZE[step.row + dir[0].x][step.col+dir[0].y] == 0) { // 如果步數上方為0
             if(rollBack){
