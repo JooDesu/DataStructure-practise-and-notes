@@ -25,7 +25,7 @@ class Point{
         this.col=_col
     }
     isEnd=function(){//用來回傳終點處於位置
-        return this.row==end.row && this.col==end.col
+        return this.row==checkpoint.row && this.col==checkpoint.col
     }
 }
 var begin = new Point(1,1)//開頭
@@ -34,10 +34,10 @@ var stack = []
 var step = begin
 var rollback=false//用來確保是否在路徑上已通過、走過的路線
 var direction = [//宣告走的格數與方向、如果想要格數走的數量增加可以放+2，-2等放在row或columme
-    [-1,0]//向上
-    [1,0]//向下
-    [0,-1]//向左
-    [0,1]//向右
+    [-1,0],//向上
+    [1,0],//向下
+    [0,-1],//向左
+    [0,1],//向右
 ]
 function avoidwalls(_row,_col){
     return _row >= 0 && _row < MAZE.length && _col >= 0 && _col < MAZE[0].length && MAZE[_row][_col] === 0;//確保在地圖內部行走
