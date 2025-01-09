@@ -1,5 +1,5 @@
 // write an ordered list class using binary serarch in javascript
-class OrderedList extends Array {//order list 重小到大
+class OrderedList extends Array {//order list 從小到大
     constructor(...elements) {
         super(...elements);
         // Sort the initial array to ensure it starts ordered

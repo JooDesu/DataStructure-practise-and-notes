@@ -1,4 +1,4 @@
-class TreeNode {
+class TreeNode {//binary tree 第二種寫法
     constructor(value) {
         this.value = value;
         this.left = null;
@@ -30,7 +30,7 @@ TreeNode.prototype.postOrderTraversal=function() {
     }
 }
 
-// Creating a simple binary tree
+// Creating a simple binary tree 
 const root = new TreeNode("A");
 root.left = nodeB= new TreeNode("B");
 root.right = nodeC = new TreeNode("C");
@@ -39,11 +39,11 @@ nodeC.right = nodeE = new TreeNode("E");
 nodeE.left = new TreeNode("F")
 
 // Testing the traversals
-console.log("In-Order Traversal:");
+console.log("In-Order Traversal:");//B,D,A,C,F,E
 root.inOrderTraversal(); 
 
-console.log("Pre-Order Traversal:");
+console.log("Pre-Order Traversal:");//A,B,D,C,E,F
 root.preOrderTraversal();
 
-console.log("Post-Order Traversal:");
+console.log("Post-Order Traversal:");//D,B,F,E,C,A
 root.postOrderTraversal(); 
