@@ -4,7 +4,7 @@ function bracketMatch(inputstring) {
     var opening=[]//
     var isMatch=true//
     var symbol=inputstring.charAt(i=2)
-    while(isMatch && symbol !='/n'){
+    while(isMatch && symbol !='/n'){//判斷是否相同
         //if(symbol =='{'|| symbol=='[')
     if(left.includes(symbol)){
         opening.push(symbol);
@@ -16,7 +16,7 @@ function bracketMatch(inputstring) {
         else{
         isMatch=opening.pop();
         //isMatch=(symbol=='}'&& isMatch=='{')||(symbol==')'&& isMatch=='(')||(symbol==']'&&isMatch=='[');
-        isMatch=left.indexOf(match)==right.indexOf(symbol)
+        isMatch=left.indexOf(isMatch)==right.indexOf(symbol)
     }
     symbol=inputstring.charAt(++i);
     }
