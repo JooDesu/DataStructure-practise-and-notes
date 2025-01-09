@@ -4,10 +4,10 @@ class TreeNode {
         this.left = null;
         this.right = null;
     }
-}
+}//a rule:always go from left to right for all orders
 
 function inOrderTraversal(node) {
-    if (node) {
+    if (node) {//inorder the node will always be in the middle:中部
         inOrderTraversal(node.left); // Visit left subtree
         console.log(node.value);      // Visit node
         inOrderTraversal(node.right); // Visit right subtree
@@ -15,7 +15,7 @@ function inOrderTraversal(node) {
 }
 
 function preOrderTraversal(node) {
-    if (node) {
+    if (node) {//preorder the node will always at the front:前部
         console.log(node.value);      // Visit node
         preOrderTraversal(node.left); // Visit left subtree
         preOrderTraversal(node.right); // Visit right subtree
@@ -23,7 +23,7 @@ function preOrderTraversal(node) {
 }
 
 function postOrderTraversal(node) {
-    if (node) {
+    if (node) {//postorder the node will always at the back:後部
         postOrderTraversal(node.left); // Visit left subtree
         postOrderTraversal(node.right); // Visit right subtree
         console.log(node.value);        // Visit node
