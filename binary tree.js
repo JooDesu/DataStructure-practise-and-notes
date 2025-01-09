@@ -4,7 +4,7 @@ class TreeNode {
         this.left = null;
         this.right = null;
     }
-}//a rule:always go from left to right for all orders
+}//a rule:always go from left to right for all orders and node is always the one at the top of the binary tree graph
 
 function inOrderTraversal(node) {
     if (node) {//inorder the node will always be in the middle:中部
