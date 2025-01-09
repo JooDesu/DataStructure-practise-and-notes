@@ -11,7 +11,7 @@ function buildTree(preorder, inorder) {
         return null;
     }
 
-    // The first element in preorder is the root
+    // The first element in preorder is the root/node
     const rootValue = preorder[0];
     const root = new TreeNode(rootValue);
 
@@ -36,13 +36,13 @@ function buildTree(preorder, inorder) {
 }
 
 // Example Usage
-const preorder = ["A","B","C","D","F","G","H","I","E"];
-const inorder = ["B","A","F","D","H","G","I","C","E"];
+const preorder = ["A","B","C","D","F","G","H","I","E"];//前
+const inorder = ["B","A","F","D","H","G","I","C","E"];//中
 
 const root = buildTree(preorder, inorder);
 
 // Function to print the tree in in-order for verification
-function inOrderTraversal(node) {
+function inOrderTraversal(node) {//樹的樣子會是： A,B,C,D,F,G,H,I,E（左到右）
     if (node) {
         inOrderTraversal(node.left);
         console.log(node.value);
