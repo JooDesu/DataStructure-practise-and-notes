@@ -55,7 +55,7 @@ function go() {
             step = new Point(step.row + dir[1].x, step.col + dir[1].y);
             Stack.push(step);
             
-        } else if (MAZE[step.row + dir[2].x][step.col+dir[2].y] == 0) { // 
+        } else if (MAZE[step.row + dir[2].x][step.col+dir[2].y] == 0) { // 如果步數左方為0
             if(rollBack){
                 Stack.push(step)
                 rollBack=false;
@@ -63,7 +63,7 @@ function go() {
             step = new Point(step.row + dir[2].x, step.col + dir[2].y);
             Stack.push(step);
             
-        } else if (MAZE[step.row + dir[3].x][step.col+dir[3].y] == 0) { // 
+        } else if (MAZE[step.row + dir[3].x][step.col+dir[3].y] == 0) { // 如果步數右方為0
             if(rollBack){
                 Stack.push(step)
                 rollBack=false;
